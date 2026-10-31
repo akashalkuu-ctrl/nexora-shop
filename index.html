@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXORA SHOP</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#100b20;color:white;font-family:Arial,sans-serif}
+header{text-align:center;padding:30px 15px;background:#21113c}
+h1{color:#c69aff;font-size:32px;margin:5px}
+header p{color:#ddd}
+main{max-width:500px;margin:25px auto;padding:18px}
+.product{background:#24183b;border:1px solid #7046a8;border-radius:16px;padding:22px;text-align:center}
+.product h2{color:#d6b5ff}
+.price{font-size:28px;color:#70ffbd;font-weight:bold}
+input,textarea{width:100%;padding:13px;margin:8px 0;border:0;border-radius:8px;font-size:16px}
+button,.contact{display:block;width:100%;padding:14px;margin-top:12px;border:0;border-radius:9px;background:#9b55ef;color:white;font-size:16px;font-weight:bold;text-align:center;text-decoration:none}
+.backup{background:#333}
+footer{text-align:center;color:#aaa;padding:20px}
+</style>
+</head>
+<body>
+<header>
+<h1>NEXORA SHOP</h1>
+<p>GAMING • MOBILE • LIFESTYLE</p>
+</header>
+<main>
+<div class="product">
+<h2>Gaming Finger Sleeves</h2>
+<p>Free Fire Gaming Finger Sleeves</p>
+<div class="price">৳60 / Pair</div>
+<p>গেমিংয়ের জন্য ফিঙ্গার স্লিভস</p>
+</div>
+
+<h2>অর্ডার করুন</h2>
+<form id="order">
+<input id="name" placeholder="আপনার নাম" required>
+<input id="phone" placeholder="মোবাইল নম্বর" required>
+<textarea id="address" placeholder="সম্পূর্ণ ঠিকানা" required></textarea>
+<input id="qty" type="number" min="1" value="1" required>
+<button type="submit">WhatsApp-এ অর্ডার করুন</button>
+</form>
+
+<a class="contact" href="https://wa.me/8801824697173">মূল WhatsApp: 01824697173</a>
+<a class="contact backup" href="https://wa.me/8801827635185">বিকল্প WhatsApp: 01827635185</a>
+</main>
+<footer>© 2026 NEXORA SHOP</footer>
+
+<script>
+document.getElementById("order").addEventListener("submit",function(e){
+e.preventDefault();
+let n=document.getElementById("name").value;
+let p=document.getElementById("phone").value;
+let a=document.getElementById("address").value;
+let q=Number(document.getElementById("qty").value);
+let total=q*60;
+let msg="NEXORA SHOP ORDER%0Aনাম: "+encodeURIComponent(n)+
+"%0Aফোন: "+encodeURIComponent(p)+
+"%0Aঠিকানা: "+encodeURIComponent(a)+
+"%0Aপণ্য: Gaming Finger Sleeves"+
+"%0Aপরিমাণ: "+q+" Pair"+
+"%0Aমোট: ৳"+total;
+window.open("https://wa.me/8801824697173?text="+msg,"_blank");
+});
+</script>
+</body>
+</html>
